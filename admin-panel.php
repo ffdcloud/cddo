@@ -2,7 +2,8 @@
 <?php 
 include('func.php');  
 include('newfunc.php');
-$con=mysqli_connect("localhost","root","root","myhmsdb", 8889);
+
+$con=mysqli_connect(DB_SERVER, DB_USER, DB_PASS, DB_NAME, DB_PORT);
 
 
   $pid = $_SESSION['pid'];
@@ -80,7 +81,7 @@ if(isset($_GET['cancel']))
 
 
 function generate_bill(){
-  $con=mysqli_connect("localhost","root","root","myhmsdb", 8889);
+  $con=mysqli_connect(DB_SERVER, DB_USER, DB_PASS, DB_NAME, DB_PORT);
   $pid = $_SESSION['pid'];
   $output='';
   $query=mysqli_query($con,"select p.pid,p.ID,p.fname,p.lname,p.doctor,p.appdate,p.apptime,p.disease,p.allergy,p.prescription,a.docFees from prestb p inner join appointmenttb a on p.ID=a.ID and p.pid = '$pid' and p.ID = '".$_GET['ID']."'");
@@ -140,7 +141,7 @@ if(isset($_GET["generate_bill"])){
 }
 
 function get_specs(){
-  $con=mysqli_connect("localhost","root","root","myhmsdb", 8889);
+  $con=mysqli_connect(DB_SERVER, DB_USER, DB_PASS, DB_NAME, DB_PORT);
   $query=mysqli_query($con,"select username,spec from doctb");
   $docarray = array();
     while($row =mysqli_fetch_assoc($query))
@@ -160,7 +161,7 @@ function get_specs(){
     <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" type="text/css" href="font-awesome-4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
     <!-- Bootstrap CSS -->
     
         <link rel="stylesheet" href="vendor/fontawesome/css/font-awesome.min.css">
@@ -309,7 +310,7 @@ function get_specs(){
                   
                   <!-- <?php
 
-                        $con=mysqli_connect("localhost","root","root","myhmsdb", 8889);
+                        $con=mysqli_connect(DB_SERVER, DB_USER, DB_PASS, DB_NAME, DB_PORT);
                         $query=mysqli_query($con,"select username,spec from doctb");
                         $docarray = array();
                           while($row =mysqli_fetch_assoc($query))
@@ -466,7 +467,7 @@ function get_specs(){
                 <tbody>
                   <?php 
 
-                    $con=mysqli_connect("localhost","root","root","myhmsdb", 8889);
+                    $con=mysqli_connect(DB_SERVER, DB_USER, DB_PASS, DB_NAME, DB_PORT);
                     global $con;
 
                     $query = "select ID,doctor,docFees,appdate,apptime,userStatus,doctorStatus from appointmenttb where fname ='$fname' and lname='$lname';";
@@ -542,7 +543,7 @@ function get_specs(){
                 <tbody>
                   <?php 
 
-                    $con=mysqli_connect("localhost","root","root","myhmsdb", 8889);
+                    $con=mysqli_connect(DB_SERVER, DB_USER, DB_PASS, DB_NAME, DB_PORT);
                     global $con;
 
                     $query = "select doctor,ID,appdate,apptime,disease,allergy,prescription from prestb where pid='$pid';";

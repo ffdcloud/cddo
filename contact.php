@@ -1,5 +1,7 @@
 <?php 
-$con=mysqli_connect("localhost","root","root","myhmsdb", 8889);
+include 'dbconfig.php';
+
+$con=mysqli_connect(DB_SERVER, DB_USER, DB_PASS, DB_NAME, DB_PORT);
 if(isset($_POST['btnSubmit']))
 {
 	$name = $_POST['txtName'];

@@ -1,6 +1,7 @@
 <?php
+include 'dbconfig.php';
 session_start();
-$con=mysqli_connect("localhost","root","root","myhmsdb", 8889);
+$con=mysqli_connect(DB_SERVER, DB_USER, DB_PASS, DB_NAME, DB_PORT);
 if(isset($_POST['search_submit'])){
   $contact=$_POST['contact'];
   $docname = $_SESSION['dname'];

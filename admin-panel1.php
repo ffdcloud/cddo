@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <?php 
-$con=mysqli_connect("localhost","root","root","myhmsdb", 8889);
-
 include('newfunc.php');
+
+$con=mysqli_connect(DB_SERVER, DB_USER, DB_PASS, DB_NAME, DB_PORT);
+
+echo "<script>console.log('PHP Message: " . addslashes(DB_SERVER) . "');</script>";
 
 if(isset($_POST['docsub']))
 {
@@ -45,7 +47,7 @@ if(isset($_POST['docsub1']))
     <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" type="text/css" href="font-awesome-4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="vendor/fontawesome/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans&display=swap" rel="stylesheet">
@@ -127,7 +129,7 @@ if(isset($_POST['docsub1']))
   </style>
   <body style="padding-top:50px;">
    <div class="container-fluid" style="margin-top:50px;">
-    <h3 style = "margin-left: 40%; padding-bottom: 20px;font-family: 'IBM Plex Sans', sans-serif;"> WELCOME RECEPTIONIST </h3>
+    <h3 style = "margin-left: 40%; padding-bottom: 20px;font-family: 'IBM Plex Sans', sans-serif;"> WELCOME, ADMIN </h3>
     <div class="row">
   <div class="col-md-4" style="max-width:25%;margin-top: 3%;">
     <div class="list-group" id="list-tab" role="tablist">
@@ -272,9 +274,9 @@ if(isset($_POST['docsub1']))
                 </thead>
                 <tbody>
                   <?php 
-                    $con=mysqli_connect("localhost","root","root","myhmsdb", 8889);
+                    $con=mysqli_connect(DB_SERVER, DB_USER, DB_PASS, DB_NAME, DB_PORT);
                     global $con;
-                    $query = "select * from doctb";
+                    $query = "select SQL_NO_CACHE * from doctb";
                     $result = mysqli_query($con,$query);
                     while ($row = mysqli_fetch_array($result)){
                       $username = $row['username'];
@@ -323,7 +325,7 @@ if(isset($_POST['docsub1']))
                 </thead>
                 <tbody>
                   <?php 
-                    $con=mysqli_connect("localhost","root","root","myhmsdb", 8889);
+                    $con=mysqli_connect(DB_SERVER, DB_USER, DB_PASS, DB_NAME, DB_PORT);
                     global $con;
                     $query = "select * from patreg";
                     $result = mysqli_query($con,$query);
@@ -379,9 +381,9 @@ if(isset($_POST['docsub1']))
                 </thead>
                 <tbody>
                   <?php 
-                    $con=mysqli_connect("localhost","root","root","myhmsdb", 8889);
+                    $con=mysqli_connect(DB_SERVER, DB_USER, DB_PASS, DB_NAME, DB_PORT);
                     global $con;
-                    $query = "select * from prestb";
+                    $query = "select SQL_NO_CACHE * from prestb";
                     $result = mysqli_query($con,$query);
                     while ($row = mysqli_fetch_array($result)){
                       $doctor = $row['doctor'];
@@ -451,7 +453,7 @@ if(isset($_POST['docsub1']))
                 <tbody>
                   <?php 
 
-                    $con=mysqli_connect("localhost","root","root","myhmsdb", 8889);
+                    $con=mysqli_connect(DB_SERVER, DB_USER, DB_PASS, DB_NAME, DB_PORT);
                     global $con;
 
                     $query = "select * from appointmenttb;";
@@ -561,7 +563,7 @@ if(isset($_POST['docsub1']))
                 <tbody>
                   <?php 
 
-                    $con=mysqli_connect("localhost","root","root","myhmsdb", 8889);
+                    $con=mysqli_connect(DB_SERVER, DB_USER, DB_PASS, DB_NAME, DB_PORT);
                     global $con;
 
                     $query = "select * from contact;";
