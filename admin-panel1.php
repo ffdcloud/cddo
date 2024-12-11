@@ -505,6 +505,7 @@ if(isset($_POST['docsub1']))
                       <option value="head" name="spec" disabled selected>Select Specialization</option>
                       <option value="General" name="spec">General</option>
                       <option value="Dentist" name="spec">Dentist</option>
+                      <option value="Anesthesiologist" name="spec">Anesthesiologist</option>
                     </select>
                     </div><br><br>
                   <div class="col-md-4"><label>Email ID:</label></div>
