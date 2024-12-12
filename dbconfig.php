@@ -1,6 +1,6 @@
 <?php
 if (!defined('DB_SERVER')) {
-    define('DB_SERVER', 'cddo-database-1.czptxhzjxjrt.us-east-1.rds.amazonaws.com');
+    define('DB_SERVER', 'cddental-rds-db-instance.czptxhzjxjrt.us-east-1.rds.amazonaws.com');
 }
 
 if (!defined('DB_USER')) {
