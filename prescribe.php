@@ -135,12 +135,12 @@ if(isset($_POST['prescribe']) && isset($_POST['pid']) && isset($_POST['ID']) && 
                   <!-- <input type="text" class="form-control"  name="prescription"  required> -->
                   <textarea id="prescription" cols="86" rows ="10" name="prescription" required></textarea>
                   </div><br><br><br>
-                  <input type="hidden" name="fname" value="<?php echo $fname ?>" />
-                  <input type="hidden" name="lname" value="<?php echo $lname ?>" />
-                  <input type="hidden" name="appdate" value="<?php echo $appdate ?>" />
-                  <input type="hidden" name="apptime" value="<?php echo $apptime ?>" />
-                  <input type="hidden" name="pid" value="<?php echo $pid ?>" />
-                  <input type="hidden" name="ID" value="<?php echo $ID ?>" />
+                  <input type="hidden" name="fname" value="<?php echo htmlentities($fname, ENT_QUOTES, 'UTF-8'); ?>" />
+                  <input type="hidden" name="lname" value="<?php echo htmlentities($lname, ENT_QUOTES, 'UTF-8'); ?>" />
+                  <input type="hidden" name="appdate" value="<?php echo htmlentities($appdate, ENT_QUOTES, 'UTF-8'); ?>" />
+                  <input type="hidden" name="apptime" value="<?php echo htmlentities($apptime, ENT_QUOTES, 'UTF-8'); ?>" />
+                  <input type="hidden" name="pid" value="<?php echo htmlentities($pid, ENT_QUOTES, 'UTF-8'); ?>" />
+                  <input type="hidden" name="ID" value="<?php echo htmlentities($ID, ENT_QUOTES, 'UTF-8'); ?>" />
                   <br><br><br><br>
           <input type="submit" name="prescribe" value="Prescribe" class="btn btn-primary" style="margin-left: 40pc;">
           
